@@ -1,0 +1,649 @@
+0.
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var daysOfWeek = 7;
+            int week = 4;
+            int months = 12;
+            for (int currentMonth = 0; currentMonth < months; currentMonth++)
+            {
+                Console.WriteLine($"Month: {currentMonth + 1}");
+                for (int currentWeeks = 0; currentWeeks < week; currentWeeks++)
+                {
+                    Console.WriteLine($"Week: {currentWeeks + 1}");
+                    for (int currentDayOfWeek = 1; currentDayOfWeek <= daysOfWeek; currentDayOfWeek++)
+                    {
+                        Console.WriteLine($"Day: {currentDayOfWeek}");
+                    }
+                }
+            }
+
+            
+        }
+    }
+}
+
+
+
+
+1.
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var side = 10;
+            for (int row = 0; row < side; row++)
+            {
+                for (int col = 0; col < side; col++)
+                {
+                    Console.Write("*");
+                }
+                Console.WriteLine();
+            }
+        }
+    }
+}
+
+
+
+
+
+
+2.
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var side = int.Parse(Console.ReadLine());
+            for (int row = 0; row < side; row++)
+            {
+                for (int col = 0; col < side; col++)
+                {
+                    Console.Write("*");
+                }
+                Console.WriteLine();
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+3.
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var side = int.Parse(Console.ReadLine());
+            for (int row = 0; row < side; row++)
+            {
+                for (int col = 0; col < side; col++)
+                {
+                    Console.Write("* ");
+                }
+                Console.WriteLine();
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+4.
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var n = int.Parse(Console.ReadLine());
+            for (int a = 0; a < n; a++)
+            {
+                for (int i = 0; i < a + 1; i++)
+                {
+                    Console.Write("$ ");
+                }
+                Console.WriteLine();
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+5.
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var n = int.Parse(Console.ReadLine());
+            PrintFirstRow(n);
+            for (int i = 0; i < n - 2; i++)
+            {
+                PrintMiddle(n);
+            }
+            PrintFirstRow(n);
+        }
+        static void PrintFirstRow(int n)
+        {
+            var plus = '+';
+            var minus = '-';
+            Console.Write($"{plus} ");
+            for (int i = 0; i < n - 2; i++)
+            {
+                Console.Write($"{minus} ");
+            }
+            Console.Write(plus);
+            Console.WriteLine();
+        }
+        static void PrintMiddle(int n)
+        {
+            var minus = '-';
+            var pipe = '|';
+            Console.Write($"{pipe} ");
+            for (int i = 0; i < n - 2; i++)
+            {
+                Console.Write($"{minus} ");
+            }
+            Console.Write(pipe);
+            Console.WriteLine();
+        }
+    }
+}
+
+
+
+
+
+
+6.
+
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var n = int.Parse(Console.ReadLine());
+            for (int i = 1; i <= n; i++)
+            {
+                Console.Write(new string(' ', n - i));
+                for (int a = 0; a < i; a++)
+                {
+                    Console.Write("* ");
+
+                }
+                Console.WriteLine();
+            }
+            for (int b = 1; b <= n - 1; b++)
+            {
+                Console.Write(new string(' ', b));
+                for (int a = 0; a < n - b; a++)
+                {
+                    Console.Write("* ");
+
+                }
+                Console.WriteLine();
+            }
+        }
+    }
+}
+
+
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var n = int.Parse(Console.ReadLine());
+            var emptySpace = ' ';
+            var asterix = '*';
+            for (int i = 1; i <= n; i++)
+            {
+                Console.Write(new string(emptySpace, n - i));
+                for (int a = 0; a < i; a++)
+                {
+                    Console.Write($"{asterix}{emptySpace}");
+                }
+                Console.WriteLine();
+            }
+            for (int b = 1; b <= n - 1; b++)
+            {
+                Console.Write(new string(emptySpace, b));
+                for (int a = 0; a < n - b; a++)
+                {
+                    Console.Write($"{asterix}{emptySpace}");
+                }
+                Console.WriteLine();
+            }
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+7.
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var n = int.Parse(Console.ReadLine());
+            var whiteSpace = ' ';
+            var asterix = '*';
+            Console.WriteLine($"{new string(whiteSpace, n + 1)}|");
+            for (int i = 1; i <= n; i++)
+            {
+                Console.WriteLine($"{new string(whiteSpace, n - i )}{new string(asterix, i)} | {new string(asterix, i)}");
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+8.
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var n = int.Parse(Console.ReadLine());
+            FirstRow(n);
+            MiddleRows(n);
+            FirstRow(n);
+
+        }
+        static void FirstRow(int n)
+        {
+            var asterixString = new string('*', n * 2);
+            var spaceString = new string(' ', n);
+            Console.WriteLine("{0}{1}{0}", asterixString, spaceString);
+        }
+        static void MiddleRows(int n)
+        {
+            var slashString = new string('/', n * 2 - 2);
+            var pipeString = new string('|', n);
+            var spaceString = new string(' ', n);
+            for (int i = 0; i < n - 2; i++)
+            {
+                if (i == ((n - 1) / 2) - 1)
+                {
+                    Console.WriteLine("*{0}*{1}*{0}*", slashString, pipeString);
+                }
+                else
+                {
+                    Console.WriteLine("*{0}*{1}*{0}*", slashString, spaceString);
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+9.
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var n = int.Parse(Console.ReadLine());
+            var asterix = '*';
+            var pipe = '|';
+            var minus = '-';
+            for (int i = 1; i <= (n + 1) / 2; i++)
+            {
+                if (n % 2 == 0)
+                {
+                    Console.WriteLine($"{new string(minus, n / 2 - i)}{new string(asterix, i * 2)}{new string(minus, n / 2 - i)}");
+                }
+                else
+                {
+                    Console.WriteLine($"{new string(minus, (n + 1) / 2 - i)}{new string(asterix, i * 2 - 1)}{new string(minus, (n + 1) / 2 - i)}");
+                }
+            }
+            for (int a = 0; a < n / 2; a++)
+            {
+                Console.WriteLine($"|{new string(asterix, n - 2)}|");
+
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+10.
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var n = int.Parse(Console.ReadLine());
+            if (n % 2 == 0)
+            {
+                Console.WriteLine($"{new string('-', n / 2 - 1)}**{new string('-', n / 2 - 1)}");
+                for (int i = 0; i < n / 2 - 1; i++)
+                {
+                    Console.WriteLine($"{new string('-', n / 2 - i - 2)}*{new string('-', i * 2 + 2)}*{new string('-', n / 2 - i - 2)}");
+
+                }
+                for (int a = 1; a <= n / 2 - 2; a++)
+                {
+                    Console.WriteLine($"{new string('-', a)}*{new string('-', n - ((a + 1) * 2))}*{new string('-', a)}");
+
+                }
+                Console.WriteLine($"{new string('-', n / 2 - 1)}**{new string('-', n / 2 - 1)}");
+            }
+            else
+            {
+                Console.WriteLine($"{new string('-', n / 2)}*{new string('-', n / 2)}");
+                for (int i = 0; i < n / 2; i++)
+                {
+                    Console.WriteLine($"{new string('-', n / 2 - i - 1)}*{new string('-', i * 2 + 1)}*{new string('-', n / 2 - i - 1)}");
+
+                }
+                for (int a = 1; a <= n / 2 - 1; a++)
+                {
+                    Console.WriteLine($"{new string('-', a)}*{new string('-', n - ((a + 1) * 2))}*{new string('-', a)}");
+
+                }
+                Console.WriteLine($"{new string('-', n / 2)}*{new string('-', n / 2)}");
+            }
+        }
+    }
+}
+
+
+
+
+
+
+--------------------------------------------------------------------------------------
+
+
+ÈÇÏÈÒÍÈ ÇÀÄÀ×È
+
+
+
+1.
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var n = int.Parse(Console.ReadLine());
+            if (n <= 4)
+            {
+                Console.WriteLine($"/{new string('^', n / 2)}\\/{new string('^', n / 2)}\\");
+                for (int i = 0; i < n / 2; i++)
+                {
+                    Console.WriteLine($"|{new string(' ', n * 2 - 2)}|");
+                }
+                Console.WriteLine($"\\{new string('_', n / 2)}/\\{new string('_', n / 2)}/");
+            }
+            else
+            {
+                Console.WriteLine($"/{new string('^', n / 2)}\\{new string('_', n * 2 - 4 - 2 * (n / 2))}/{new string('^', n / 2)}\\");
+                for (int i = 0; i < n - 3; i++)
+                {
+                    Console.WriteLine($"|{new string(' ', (n * 2 - 2 ))}| ");
+                }
+                Console.WriteLine($"|{new string(' ', n / 2 + 1)}{new string('_', n * 2 - 4 - 2 * (n / 2))}{new string(' ', n / 2 + 1)}|");
+                Console.WriteLine($"\\{new string('_', n / 2)}/{new string(' ', n * 2 - 4 - 2 * (n / 2))}\\{new string('_', n / 2)}/");
+            }
+        }
+    }
+}
+
+
+
+
+
+2.
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var n = int.Parse(Console.ReadLine());
+            for (int i = 1; i <= n - 2; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    Console.WriteLine($"{new string('-', n - 2)}\\ /{new string('-', n - 2)}");
+                }
+                else
+                {
+                    Console.WriteLine($"{new string('*', n - 2)}\\ /{new string('*', n - 2)}");
+                }
+            }
+            Console.WriteLine($"{new string(' ', n - 1)}@{new string(' ', n - 1)}");
+            for (int i = 1; i <= n - 2; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    Console.WriteLine($"{new string('-', n - 2)}/ \\{new string('-', n - 2)}");
+                }
+                else
+                {
+                    Console.WriteLine($"{new string('*', n - 2)}/ \\{new string('*', n - 2)}");
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+3.
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var n = int.Parse(Console.ReadLine());
+            Console.WriteLine($"{new string('.', n + 1)}{new string('_', 2 * n + 1)}{new string('.', n + 1)}");
+            for (int i = 0; i < n; i++)
+            {
+                Console.WriteLine($"{new string('.', n - i)}//{new string('_', (2 * n - 1) + 2 * i)}\\\\{new string('.', n - i)}");
+            }
+            Console.WriteLine($"//{new string('_', 2 * n - 3)}STOP!{new string('_', 2 * n - 3)}\\\\");
+            for (int i = 0; i < n; i++)
+            {
+                Console.WriteLine($"{new string('.', i)}\\\\{new string('_', (4 * n - 1) - 2 * i)}//{new string('.', i)}");
+
+            }
+        }
+    }
+}
