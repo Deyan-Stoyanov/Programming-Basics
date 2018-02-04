@@ -1,0 +1,46 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var n = int.Parse(Console.ReadLine());
+            PrintFirstRow(n);
+            for (int i = 0; i < n - 2; i++)
+            {
+                PrintMiddle(n);
+            }
+            PrintFirstRow(n);
+        }
+        static void PrintFirstRow(int n)
+        {
+            var plus = '+';
+            var minus = '-';
+            Console.Write($"{plus} ");
+            for (int i = 0; i < n - 2; i++)
+            {
+                Console.Write($"{minus} ");
+            }
+            Console.Write(plus);
+            Console.WriteLine();
+        }
+        static void PrintMiddle(int n)
+        {
+            var minus = '-';
+            var pipe = '|';
+            Console.Write($"{pipe} ");
+            for (int i = 0; i < n - 2; i++)
+            {
+                Console.Write($"{minus} ");
+            }
+            Console.Write(pipe);
+            Console.WriteLine();
+        }
+    }
+}

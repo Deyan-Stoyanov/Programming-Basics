@@ -1,0 +1,90 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var city = Console.ReadLine().ToLower();
+            var sales = double.Parse(Console.ReadLine());
+            var comission = 0.0;
+
+            bool isSmallerThan500 = (sales > 0 && sales <= 500);
+            bool isSmallerThan1000 = (sales > 500 && sales <= 1000);
+            bool isSmallerThan10000 = (sales > 1000 && sales <= 10000);
+            bool isGreaterThan10000 = (sales > 10000);
+
+            if (city == "sofia")
+            {
+                if (isSmallerThan500)
+                {
+                    comission = 0.05 * sales;
+                }
+                if (isSmallerThan1000)
+                {
+                    comission = 0.07 * sales;
+                }
+                if (isSmallerThan10000)
+                {
+                    comission = 0.08 * sales;
+                }
+                if (isGreaterThan10000)
+                {
+                    comission = 0.12 * sales;
+                }
+            }
+            else if (city == "varna")
+            {
+                if (isSmallerThan500)
+                {
+                    comission = 0.045 * sales;
+                }
+                if (isSmallerThan1000)
+                {
+                    comission = 0.075 * sales;
+                }
+                if (isSmallerThan10000)
+                {
+                    comission = 0.1 * sales;
+                }
+                if (isGreaterThan10000)
+                {
+                    comission = 0.13 * sales;
+                }
+            }
+            else if (city == "plovdiv")
+            {
+                if (isSmallerThan500)
+                {
+                    comission = 0.055 * sales;
+                }
+                if (isSmallerThan1000)
+                {
+                    comission = 0.08 * sales;
+                }
+                if (isSmallerThan10000)
+                {
+                    comission = 0.12 * sales;
+                }
+                if (isGreaterThan10000)
+                {
+                    comission = 0.145 * sales;
+                }
+            }
+            else
+            {
+                Console.WriteLine("error");
+            }
+            if (sales <= 0)
+            {
+                Console.WriteLine("error");
+            }
+            Console.WriteLine($"{comission:f2}");
+        }        
+    }
+}

@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var figure = Console.ReadLine();
+            if (figure.ToLower() == "square")
+            {
+                var a = double.Parse(Console.ReadLine());
+                var area = a * a;
+                Console.WriteLine(Math.Round(area, 3));
+            }
+            if (figure.ToLower() == "rectangle")
+            {
+                var a = double.Parse(Console.ReadLine());
+                var b = double.Parse(Console.ReadLine());
+                var area = a * b;
+                Console.WriteLine(Math.Round(area, 3));
+            }
+            if (figure.ToLower() == "triangle")
+            {
+                var a = double.Parse(Console.ReadLine());
+                var h = double.Parse(Console.ReadLine());
+                var area = a * h * 0.5;
+                Console.WriteLine(Math.Round(area, 3));
+            }
+            if (figure.ToLower() == "circle")
+            {
+                var r = double.Parse(Console.ReadLine());
+                var area = r * r * Math.PI;
+                Console.WriteLine(Math.Round(area, 3));
+            }
+        }
+    }
+}

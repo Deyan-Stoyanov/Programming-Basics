@@ -1,0 +1,37 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var n = int.Parse(Console.ReadLine());
+            var emptySpace = ' ';
+            var asterix = '*';
+            for (int i = 1; i <= n; i++)
+            {
+                Console.Write(new string(emptySpace, n - i));
+                for (int a = 0; a < i; a++)
+                {
+                    Console.Write($"{asterix}{emptySpace}");
+                }
+                Console.WriteLine();
+            }
+            for (int b = 1; b <= n - 1; b++)
+            {
+                Console.Write(new string(emptySpace, b));
+                for (int a = 0; a < n - b; a++)
+                {
+                    Console.Write($"{asterix}{emptySpace}");
+                }
+                Console.WriteLine();
+            }
+
+        }
+    }
+}

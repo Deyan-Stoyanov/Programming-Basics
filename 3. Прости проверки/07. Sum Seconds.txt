@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var firstSec = int.Parse(Console.ReadLine());
+            var secondSec = int.Parse(Console.ReadLine());
+            var thirdSec = int.Parse(Console.ReadLine());
+            var sum = firstSec + secondSec + thirdSec;
+            var min = sum / 60;
+            var sec = sum % 60;
+            if (sec <= 9)
+            {
+                Console.WriteLine($"{min}:{sec:d2}");
+            }
+            else
+            {
+                Console.WriteLine($"{min}:{sec}");
+            }
+        }
+    }
+}

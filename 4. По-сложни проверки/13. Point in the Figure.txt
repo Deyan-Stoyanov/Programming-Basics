@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var h = int.Parse(Console.ReadLine());
+            var x = int.Parse(Console.ReadLine());
+            var y = int.Parse(Console.ReadLine());
+
+            bool inside1 = x > 0 && x < 3 * h && y > 0 && y < h;
+            bool inside2 = x > h && x < 2 * h && y >= h && y < 4 * h;
+
+            bool outside1 = (x < 0 || x > 3 * h) || (y < 0 || y > h);
+            bool outside2 = (x < h || x > 2 * h) || (y < h || y > 4 * h);
+            if (inside1 || inside2)
+            {
+                Console.WriteLine("inside");
+            }
+            else if (outside1 && outside2)
+            {
+                Console.WriteLine("outside");
+            }
+            else
+            {
+                Console.WriteLine("border");
+            }
+        }        
+    }
+}

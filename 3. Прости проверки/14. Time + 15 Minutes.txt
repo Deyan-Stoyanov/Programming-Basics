@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var hours = int.Parse(Console.ReadLine());
+            var minutes = int.Parse(Console.ReadLine());
+            var time = minutes + 15;
+            if (time >= 60)
+            {
+                hours++;
+                time -= 60;
+            }
+            if (hours == 24)
+            {
+                hours = 0;
+            }
+            if (time < 10)
+            {
+                Console.WriteLine($"{hours}:0{time}");
+            }
+            else
+            {
+                Console.WriteLine($"{hours}:{time}");
+            }
+        }
+    }
+}

@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var movie = Console.ReadLine().ToLower();
+            var rows = double.Parse(Console.ReadLine());
+            var lines = double.Parse(Console.ReadLine());
+            var places = rows * lines;
+            var premiere = 12;
+            var normal = 7.5;
+            var discount = 5;
+            var total = 0.0;
+            switch (movie)
+            {
+                case "premiere":
+                    total = places * premiere;
+                    break;
+                case "normal":
+                    total = places * normal;
+                    break;
+                case "discount":
+                    total = places * discount;
+                    break;
+                default:
+                    break;
+            }
+            Console.WriteLine($"{total:f2} leva");
+
+        }        
+    }
+}

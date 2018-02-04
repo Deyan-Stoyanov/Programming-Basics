@@ -1,0 +1,95 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var num = double.Parse(Console.ReadLine());
+            var input = Console.ReadLine();
+            var output = Console.ReadLine();
+
+            var m = "m";
+            var cm = "cm";
+            var inch = "in";
+            var mm = "mm";
+            var km = "km";
+            var mi = "mi";
+            var ft = "ft";
+            var yd = "yd";
+
+            var milimetres = 1000;
+            var centimetres = 100;
+            var miles = 0.000621371192;
+            var inches = 39.3700787;
+            var kilometres = 0.001;
+            var yards = 1.0936133;
+            var feet = 3.2808399;
+
+            var numberInMetres = num;
+            if (input == mm)
+            {
+                numberInMetres = num / milimetres;
+            }
+            else if (input == cm)
+            {
+                numberInMetres = num / centimetres;
+            }
+            else if (input == mi)
+            {
+                numberInMetres = num / miles;
+            }
+            else if (input == km)
+            {
+                numberInMetres = num / kilometres;
+            }
+            else if (input == inch)
+            {
+                numberInMetres = num / inches;
+            }
+            else if (input == ft)
+            {
+                numberInMetres = num / feet;
+            }
+            else if (input == yd)
+            {
+                numberInMetres = num / yards;
+            }
+
+            if (output == mm)
+            {
+                numberInMetres *= milimetres;
+            }
+            else if (output == cm)
+            {
+                numberInMetres *= centimetres;
+            }
+            else if (output == mi)
+            {
+                numberInMetres *= miles;
+            }
+            else if (output == km)
+            {
+                numberInMetres *= kilometres;
+            }
+            else if (output == inch)
+            {
+                numberInMetres *= inches;
+            }
+            else if (output == ft)
+            {
+                numberInMetres *= feet;
+            }
+            else if (output == yd)
+            {
+                numberInMetres *= yards;
+            }
+            Console.WriteLine($"{numberInMetres:f8}");
+        }
+    }
+}

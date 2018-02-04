@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var word = Console.ReadLine().ToLower();
+
+            var vegetalbe = "vegetable";
+            var fruit = "fruit";
+            var unknown = "unknown";
+
+            if (word == "banana" || word == "apple" || word == "kiwi" || word == "cherry" || word == "lemon" || word == "grapes")
+            {
+                Console.WriteLine(fruit);
+            }
+            else if (word == "tomato" || word == "cucumber" || word == "pepper" || word == "carrot")
+            {
+                Console.WriteLine(vegetalbe);
+            }
+            else
+            {
+                Console.WriteLine(unknown);
+            }
+        }        
+    }
+}

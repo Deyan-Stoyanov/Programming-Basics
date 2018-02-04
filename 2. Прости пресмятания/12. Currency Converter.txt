@@ -1,0 +1,81 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double number = double.Parse(Console.ReadLine());
+            string inputCurrency = Console.ReadLine();
+            string outputCurrency = Console.ReadLine();
+            double result = 0.0;
+            //1 BGN    1.79549 USD   1.95583 EUR    2.53405 GBP
+            if (inputCurrency == "BGN")
+            {
+                if (outputCurrency == "USD")
+                {
+                    result = number / 1.79549;
+                }
+                if (outputCurrency == "EUR")
+                {
+                    result = number / 1.95583;
+                }
+                if (outputCurrency == "GBP")
+                {
+                    result = number / 2.534059;
+                }
+            }
+            if (inputCurrency == "USD")
+            {
+                if (outputCurrency == "BGN")
+                {
+                    result = number * 1.79549;
+                }
+                if (outputCurrency == "EUR")
+                {
+                    result = (number * 1.79549) / 1.95583;
+                }
+                if (outputCurrency == "GBP")
+                {
+                    result = (number * 1.79549) / 2.534059;
+                }
+            }
+            if (inputCurrency == "EUR")
+            {
+                if (outputCurrency == "BGN")
+                {
+                    result = number * 1.95583;
+                }
+                if (outputCurrency == "USD")
+                {
+                    result = (number * 1.95583) / 1.79549;
+                }
+                if (outputCurrency == "GBP")
+                {
+                    result = (number * 1.95583) / 2.534059;
+                }
+            }
+            if (inputCurrency == "GBP")
+            {
+                if (outputCurrency == "BGN")
+                {
+                    result = number * 2.534059;
+                }
+                if (outputCurrency == "EUR")
+                {
+                    result = (number * 2.534059) / 1.95583;
+                }
+                if (outputCurrency == "USD")
+                {
+                    result = (number * 2.534059) / 1.79549;
+                }
+            }
+            Console.WriteLine(Math.Round(result, 2));
+        }
+    }
+}

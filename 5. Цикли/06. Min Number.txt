@@ -1,0 +1,26 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var n = int.Parse(Console.ReadLine());
+            var minNum = int.MaxValue;
+            for (int i = 1; i <= n; i++)
+            {
+                var number = int.Parse(Console.ReadLine());
+                if (number < minNum)
+                {
+                    minNum = number;
+                }
+            }
+            Console.WriteLine(minNum);
+        }
+    }
+}

@@ -1,0 +1,731 @@
+1.
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            for (int i = 1; i <= 100; i++)
+            {
+                Console.WriteLine(i);
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+2.
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            for (int i = 1; i <= 1000; i++)
+            {
+                if (i % 10 == 7)
+                {
+                    Console.WriteLine(i);
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            for (int i = 7; i <= 997; i+= 10)
+            {
+                Console.WriteLine(i);
+            }
+        }
+    }
+}
+
+
+
+
+
+
+3.
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            for (char i = 'a'; i <= 'z'; i++)
+            {
+                Console.WriteLine(i);
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+4.
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var n = int.Parse(Console.ReadLine());
+            var sum = 0;
+            for (int i = 1; i <= n; i++)
+            {
+                var numbers = int.Parse(Console.ReadLine());
+                sum += numbers;
+            }
+            Console.WriteLine(sum);
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+5.
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var n = int.Parse(Console.ReadLine());
+            var maxNum = int.MinValue;
+            for (int i = 1; i <= n; i++)
+            {
+                var number = int.Parse(Console.ReadLine());
+                if (number > maxNum)
+                {
+                    maxNum = number;
+                }
+            }
+            Console.WriteLine(maxNum);
+        }
+    }
+}
+
+
+
+
+
+
+
+
+6.
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var n = int.Parse(Console.ReadLine());
+            var minNum = int.MaxValue;
+            for (int i = 1; i <= n; i++)
+            {
+                var number = int.Parse(Console.ReadLine());
+                if (number < minNum)
+                {
+                    minNum = number;
+                }
+            }
+            Console.WriteLine(minNum);
+        }
+    }
+}
+
+
+
+
+
+
+
+7.
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var n = int.Parse(Console.ReadLine());
+            var leftSum = 0;
+            var rightSum = 0;
+            for (int i = 1; i <= 2 * n; i++)
+            {
+                var numbers = int.Parse(Console.ReadLine());
+                if (i <= n)
+                {
+                    leftSum += numbers;
+                }
+                else
+                {
+                    rightSum += numbers;
+                }
+            }
+            if (leftSum == rightSum)
+            {
+                Console.WriteLine($"Yes, sum = {leftSum}");
+            }
+            else
+            {
+                Console.WriteLine($"No, diff = {Math.Abs(leftSum - rightSum)}");
+            }
+        }
+    }
+}
+
+
+
+
+
+8.
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var n = int.Parse(Console.ReadLine());
+            var evenSum = 0;
+            var oddSum = 0;
+            for (int i = 1; i <= n; i++)
+            {
+                var numbers = int.Parse(Console.ReadLine());
+                if (i % 2 == 0)
+                {
+                    evenSum += numbers;
+                }
+                else
+                {
+                    oddSum += numbers;
+                }
+            }
+            if (evenSum == oddSum)
+            {
+                Console.WriteLine($"Yes, sum = {evenSum}");
+            }
+            else
+            {
+                Console.WriteLine($"No, diff = {Math.Abs(evenSum - oddSum)}");
+            }
+        }
+    }
+}
+
+
+
+
+
+
+9.
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string text = Console.ReadLine();
+            var sum = 0;
+            for (int i = 0; i < text.Length; i++)
+            {
+                char symbol = text[i];
+                if (symbol == 'a')
+                {
+                    sum ++;
+                }
+                if (symbol == 'e')
+                {
+                    sum += 2;
+                }
+                if (symbol == 'i')
+                {
+                    sum += 3;
+                }
+                if (symbol == 'o')
+                {
+
+                    sum += 4;
+                }
+                if (symbol == 'u')
+                {
+                    sum += 5;
+                }
+            }
+            Console.WriteLine(sum);
+        }
+    }
+}
+
+
+
+
+
+
+10.
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var n = int.Parse(Console.ReadLine());
+            var maxNum = int.MinValue;
+            var sum = 0;
+            for (int i = 0; i < n; i++)
+            {
+                var number = int.Parse(Console.ReadLine());
+                if (number > maxNum)
+                {
+                    maxNum = number;
+                }
+                sum += number;
+            }
+            if (sum - maxNum == maxNum)
+            {
+                Console.WriteLine("Yes");
+                Console.WriteLine($"Sum = {maxNum}");
+            }
+            else
+            {
+                Console.WriteLine("No");
+                Console.WriteLine($"Diff = {Math.Abs(sum - maxNum - maxNum)}");
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+11.
+
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var n = int.Parse(Console.ReadLine());
+            var oddMax = double.MinValue;
+            var oddMin = double.MaxValue;
+            var oddSum = 0.0;
+            var evenMax = double.MinValue;
+            var evenMin = double.MaxValue;
+            var evenSum = 0.0;
+
+            for (int i = 1; i <= n; i++)
+            {
+                var number = double.Parse(Console.ReadLine());
+       
+                if (i % 2 != 0)
+                {
+                    if (number > oddMax)
+                    {
+                        oddMax = number;
+                    }
+                    if (number < oddMin)
+                    {
+                        oddMin = number;
+                    }
+                    oddSum += number;
+                }
+                else
+                {
+                    if (number > evenMax)
+                    {
+                        evenMax = number;
+                    }
+                    if (number < evenMin)
+                    {
+                        evenMin = number;
+                    }
+                    evenSum += number;
+                }
+            }
+            if (n == 0)
+            {
+                Console.WriteLine($"OddSum={0},");
+                Console.WriteLine($"OddMin=no,");
+                Console.WriteLine($"OddMax=no,");
+                Console.WriteLine($"EvenSum={0},");
+                Console.WriteLine($"EvenMin=no,");
+                Console.WriteLine($"EvenMax=no");
+            }
+            if (n == 1)
+            {
+                Console.WriteLine($"OddSum={oddSum},");
+                Console.WriteLine($"OddMin={oddMin},");
+                Console.WriteLine($"OddMax={oddMax},");
+                Console.WriteLine($"EvenSum={0},");
+                Console.WriteLine($"EvenMin=no,");
+                Console.WriteLine($"EvenMax=no");
+            }
+            else
+            {
+                Console.WriteLine($"OddSum={oddSum},");
+                Console.WriteLine($"OddMin={oddMin},");
+                Console.WriteLine($"OddMax={oddMax},");
+                Console.WriteLine($"EvenSum={evenSum},");
+                Console.WriteLine($"EvenMin={evenMin},");
+                Console.WriteLine($"EvenMax={evenMax}");
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+12.
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var n = int.Parse(Console.ReadLine());
+            int firstPair = 0;
+            int secondPair = 0;
+            var maxDiff = 0;
+            for (int i = 0; i < n; i++)
+            {
+                secondPair = firstPair;
+                var firstNumber = int.Parse(Console.ReadLine());
+                var secondNumber = int.Parse(Console.ReadLine());
+                firstPair = firstNumber + secondNumber;
+
+                if (i > 0)
+                {
+                    var currentDiff = Math.Abs(secondPair - firstPair);
+                    if (currentDiff > maxDiff)
+                    {
+                        maxDiff = currentDiff;
+                    }
+                }
+            }
+            if (maxDiff == 0)
+            {
+                Console.WriteLine($"Yes, value = {firstPair}");
+            }
+            else
+            {
+                Console.WriteLine($"No, maxdiff = {maxDiff}");
+
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+»«œ»“Õ» «¿ƒ¿◊»
+
+
+
+
+
+
+
+1.
+
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var n = int.Parse(Console.ReadLine());
+            var p1 = 0.0;
+            var p2 = 0.0;
+            var p3 = 0.0;
+            var p4 = 0.0;
+            var p5 = 0.0;
+
+            for (int i = 0; i < n; i++)
+            {
+                var number = int.Parse(Console.ReadLine());
+                if (number < 200)
+                {
+                    p1++;
+                }
+                if (number >= 200 && number < 400)
+                {
+                    p2++;
+                }
+                if (number >= 400 && number < 600)
+                {
+                    p3++;
+                }
+                if (number >= 600 && number < 800)
+                {
+                    p4++;
+                }
+                if (number >= 800)
+                {
+                    p5++;
+                }
+            }
+            Console.WriteLine($"{((p1 / n) * 100):f2}%");
+            Console.WriteLine($"{((p2 / n) * 100):f2}%");
+            Console.WriteLine($"{((p3 / n) * 100):f2}%");
+            Console.WriteLine($"{((p4 / n) * 100):f2}%");
+            Console.WriteLine($"{((p5 / n) * 100):f2}%");
+        }
+    }
+}
+
+
+
+
+
+
+
+2.
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var n = int.Parse(Console.ReadLine());
+            var p1 = 0.0;
+            var p2 = 0.0;
+            var p3 = 0.0;
+            for (int i = 0; i < n; i++)
+            {
+                var number = int.Parse(Console.ReadLine());
+                if (number % 2 == 0)
+                {
+                    p1++;
+                }
+                if (number % 3 == 0)
+                {
+                    p2++;
+                }
+                if (number % 4 == 0)
+                {
+                    p3++;
+                }
+            }
+            Console.WriteLine($"{((p1 / n) * 100):f2}%");
+            Console.WriteLine($"{((p2 / n) * 100):f2}%");
+            Console.WriteLine($"{((p3 / n) * 100):f2}%");
+        }
+    }
+}
+
+
+
+
+
+
+
+
+3.
+
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var years = int.Parse(Console.ReadLine());
+            var washmashinePrice = double.Parse(Console.ReadLine());
+            var toyPrice = double.Parse(Console.ReadLine());
+            var toys = 0;
+            var money = 0.0;
+            var totalSaved = 0.0;
+            for (int i = 1; i <= years; i++)
+            {
+                if (i % 2 != 0)
+                {
+                    toys++;
+                }
+                else
+                {
+                    money += ((i / 2) * 10);
+                }
+            }
+            totalSaved = (toys * toyPrice) + (money - (years / 2));
+            if (totalSaved >= washmashinePrice)
+            {
+                Console.WriteLine($"Yes! {(totalSaved - washmashinePrice):f2}");
+            }
+            else
+            {
+                Console.WriteLine($"No! {(washmashinePrice - totalSaved):f2}");
+            }
+        }
+    }
+}
+--------------------------------------------------------------------------------------
