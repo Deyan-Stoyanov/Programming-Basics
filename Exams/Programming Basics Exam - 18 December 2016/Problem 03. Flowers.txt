@@ -1,0 +1,60 @@
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Numerics;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var hrisantemiPrice = 0.0;
+            var rosesPrice = 0.0;
+            var tulipsPrice = 0.0;
+            var hrisantemiN = int.Parse(Console.ReadLine());
+            var rosesN = int.Parse(Console.ReadLine());
+            var tulipsN = int.Parse(Console.ReadLine());
+            var season = Console.ReadLine().ToLower();
+            var holiday = char.Parse(Console.ReadLine().ToLower());
+            switch (season)
+            {
+                case "spring":
+                case "summer":
+                    hrisantemiPrice = 2.0;
+                    rosesPrice = 4.1;
+                    tulipsPrice = 2.5;
+                    break;
+                case "autumn":
+                case "winter":
+                    hrisantemiPrice = 3.75;
+                    rosesPrice = 4.5;
+                    tulipsPrice = 4.15;
+                    break;
+                default:
+                    break;
+            }
+            var total = hrisantemiPrice * hrisantemiN + rosesPrice * rosesN + tulipsPrice * tulipsN;
+            if (holiday == 'y')
+            {
+                total *= 1.15;
+            }
+            if (season == "spring" && tulipsN > 7)
+            {
+                total *= 0.95;
+            }
+            if (season == "winter" && rosesN >= 10)
+            {
+                total *= 0.9;
+            }
+            if (hrisantemiN + rosesN + tulipsN > 20)
+            {
+                total *= 0.8;
+            }
+            Console.WriteLine($"{(total + 2):f2}");
+        }
+    }
+}

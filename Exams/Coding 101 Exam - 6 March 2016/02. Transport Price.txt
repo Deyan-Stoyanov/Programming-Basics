@@ -1,0 +1,63 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var n = int.Parse(Console.ReadLine());
+            string time = (Console.ReadLine());
+            if (time.ToUpper() == "DAY")
+            {
+                if (n >= 100)
+                {
+                    double taxi = (0.7 + (0.79 * n));
+                    double bus = (n * 0.09);
+                    double train = (n * 0.06);
+                    double prices = Math.Min(Math.Min(taxi, train), bus);
+                    Console.WriteLine(prices);
+                }
+                if (n < 100 && n >= 20)
+                {
+                    double taxi = (0.7 + (0.79 * n));
+                    double bus = (n * 0.09);
+                    double prices = Math.Min(taxi, bus);
+                    Console.WriteLine(prices);
+                }
+                if (n < 20)
+                {
+                    double taxi = (0.7 + (0.79 * n));
+                    Console.WriteLine(taxi);
+                }
+            }
+            if (time.ToUpper() == "NIGHT")
+            {
+                if (n >= 100)
+                {
+                    double taxi = (0.7 + (0.9 * n));
+                    double bus = (n * 0.09);
+                    double train = (n * 0.06);
+                    double prices = Math.Min(Math.Min(taxi, train), bus);
+                    Console.WriteLine(prices);
+                }
+                if (n < 100 && n >= 20)
+                {
+                    double taxi = (0.7 + (0.9 * n));
+                    double bus = (n * 0.09);
+                    double prices = Math.Min(taxi, bus);
+                    Console.WriteLine(prices);
+                }
+                if (n < 20)
+                {
+                    double taxi = (0.7 + (0.9 * n));
+                    Console.WriteLine(taxi);
+                }
+            }
+        }
+    }
+}

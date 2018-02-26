@@ -1,0 +1,53 @@
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Numerics;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var begin = int.Parse(Console.ReadLine());
+            var end = int.Parse(Console.ReadLine());
+            var magicNum = int.Parse(Console.ReadLine());
+            var a = 0;
+            var b = 0;
+            var count = 0;
+            var sum = 0;
+            var timeToBreak = false;
+            for (int i = begin; i <= end; i++)
+            {
+                for (int j = begin; j <= end; j++)
+                {
+                    sum = i + j;
+                    count++;
+                    if (sum == magicNum)
+                    {
+                        timeToBreak = true;
+                        a = i;
+                        b = j;
+                        break;
+                    }
+                }
+                if (timeToBreak == true)
+                {
+                    break;
+                }
+            }
+            if (timeToBreak == false)
+            {
+                Console.WriteLine($"{count} combinations - neither equals {magicNum}");
+            }
+            else
+            {
+                Console.WriteLine($"Combination N:{count} ({a} + {b} = {magicNum})");
+
+            }
+        }
+    }
+}

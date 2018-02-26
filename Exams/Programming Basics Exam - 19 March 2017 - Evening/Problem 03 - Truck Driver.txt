@@ -1,0 +1,63 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var season = Console.ReadLine().ToLower();
+            var kmPerMonth = double.Parse(Console.ReadLine());
+            var salaryPerKm = 0.0;
+            if (kmPerMonth <= 5000)
+            {
+                switch (season)
+                {
+                    case "winter":
+                        salaryPerKm = 1.05;
+                        break;
+                    case "summer":
+                        salaryPerKm = 0.9;
+                        break;
+                    case "autumn":
+                    case "spring":
+                        salaryPerKm = 0.75;
+                        break;
+
+                    default:
+                        break;
+                }
+            }
+            if (kmPerMonth > 5000 && kmPerMonth <= 10000)
+            {
+                switch (season)
+                {
+                    case "winter":
+                        salaryPerKm = 1.25;
+                        break;
+                    case "summer":
+                        salaryPerKm = 1.1;
+                        break;
+                    case "autumn":
+                    case "spring":
+                        salaryPerKm = 0.95;
+                        break;
+
+                    default:
+                        break;
+                }
+            }
+            if (kmPerMonth > 10000 && kmPerMonth <= 20000)
+            {
+                salaryPerKm = 1.45;
+            }
+            var salary = salaryPerKm * kmPerMonth * 4;
+            var salaryNetto = salary - (salary * 0.1);
+            Console.WriteLine($"{salaryNetto:f2}");
+        }
+    }
+}

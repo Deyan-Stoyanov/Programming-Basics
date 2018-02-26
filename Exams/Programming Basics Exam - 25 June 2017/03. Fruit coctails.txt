@@ -1,0 +1,82 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var fruit = Console.ReadLine().ToLower();
+            var size = Console.ReadLine().ToLower();
+            var number = double.Parse(Console.ReadLine());
+            var totalPrice = 0.0;
+            var pricePerLiter = 0.0;
+            if (size == "small")
+            {
+                switch (fruit)
+                {
+                    case "watermelon":
+                        pricePerLiter = 56;
+                        break;
+                    case "mango":
+                        pricePerLiter = 36.66;
+                        break;
+                    case "pineapple":
+                        pricePerLiter = 42.10;
+                        break;
+                    case "raspberry":
+                        pricePerLiter = 20;
+                        break;
+                    default:
+                        break;
+                }
+            }
+            else if (size == "big")
+            {
+                switch (fruit)
+                {
+                    case "watermelon":
+                        pricePerLiter = 28.70;
+                        break;
+                    case "mango":
+                        pricePerLiter = 19.60;
+                        break;
+                    case "pineapple":
+                        pricePerLiter = 24.80;
+                        break;
+                    case "raspberry":
+                        pricePerLiter = 15.20;
+                        break;
+                    default:
+                        break;
+                }
+            }
+            if (size == "big")
+            {
+                totalPrice = number * 5 * pricePerLiter;
+            }
+            else if (size == "small")
+            {
+                totalPrice = number * 2 * pricePerLiter;
+
+            }
+            if (totalPrice > 1000)
+            {
+                Console.WriteLine($"{(totalPrice / 2):f2} lv.");
+            }
+            else if (totalPrice >= 400)
+            {
+                Console.WriteLine($"{(totalPrice - (totalPrice * 0.15)):f2} lv.");
+            }
+            else
+            {
+                Console.WriteLine($"{(totalPrice):f2} lv.");
+            }
+
+        }
+    }
+}

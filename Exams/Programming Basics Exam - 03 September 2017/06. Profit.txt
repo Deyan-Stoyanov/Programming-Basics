@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Numerics;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var oneLev = int.Parse(Console.ReadLine());
+            var twoLev = int.Parse(Console.ReadLine());
+            var fiveLev = int.Parse(Console.ReadLine());
+            var sum = int.Parse(Console.ReadLine());
+            for (int i = 0; i <= oneLev; i++)
+            {
+                for (int j = 0; j <= twoLev; j++)
+                {
+                    for (int k = 0; k <= fiveLev; k++)
+                    {
+                        if (((i * 1) + (j * 2) + (k * 5)) == sum)
+                        {
+                            Console.WriteLine($"{i} * 1 lv. + {j} * 2 lv. + {k} * 5 lv. = {sum} lv.");
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

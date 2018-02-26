@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var area = int.Parse(Console.ReadLine());
+            var grapePerSq = double.Parse(Console.ReadLine());
+            var wineNeeded = int.Parse(Console.ReadLine());
+            var workers = int.Parse(Console.ReadLine());
+            var grapeForWine = area * 0.4;
+            var wine = (grapeForWine * grapePerSq) / 2.5;
+            if (wine >= wineNeeded)
+            {
+                var wineLeft = wine - wineNeeded;
+                var winePerWorker = wineLeft / workers;
+                Console.WriteLine("Good harvest this year! Total wine: {0} liters.", Math.Floor(wine));
+                Console.WriteLine("{0} liters left -> {1} liters per person.", Math.Ceiling(wineLeft), Math.Ceiling(winePerWorker));
+            }
+            else
+            {
+                var lessWine = wineNeeded - wine;
+                Console.WriteLine("It will be a tough winter! More {0} liters wine needed.", Math.Floor(lessWine));
+            }
+        }
+    }
+}

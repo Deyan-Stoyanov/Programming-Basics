@@ -1,0 +1,60 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var adults = int.Parse(Console.ReadLine());
+            var kids = int.Parse(Console.ReadLine());
+            var nights = int.Parse(Console.ReadLine());
+            var transport = Console.ReadLine().ToLower();
+            var transportAdults = 0.0;
+            var transportKids = 0.0;
+            var hotel = 0.0;
+            var comission = 0.0;
+            if (transport == "train")
+            {
+                if (adults + kids >= 50)
+                {
+                    transportAdults = (adults * 24.99) / 2;
+                    transportKids = (kids * 14.99) / 2;
+                }
+                else
+                {
+                    transportAdults = adults * 24.99;
+                    transportKids = kids * 14.99;
+                }
+                
+            }
+            else if (transport == "bus")
+            {
+                transportAdults = adults * 32.50;
+                transportKids = kids * 28.50;
+            }
+            else if (transport == "boat")
+            {
+                transportAdults = adults * 42.99;
+                transportKids = kids * 39.99;
+            }
+            else if (transport == "airplane")
+            {
+                transportAdults = adults * 70.0;
+                transportKids = kids * 50.0;
+            }
+            hotel = nights * 82.99;
+            var transportTotal = (transportAdults + transportKids) * 2;
+            var total = transportTotal + hotel;
+            comission = total * 0.1;
+            var netto = total + comission;
+            Console.WriteLine($"{netto:f2}");
+
+
+        }
+    }
+}

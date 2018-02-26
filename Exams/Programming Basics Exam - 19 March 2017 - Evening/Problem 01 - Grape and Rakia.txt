@@ -1,0 +1,23 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var area = double.Parse(Console.ReadLine());
+            var grapePerSq = double.Parse(Console.ReadLine());
+            var brak = double.Parse(Console.ReadLine());
+            var grapeTotal = (area * grapePerSq) - brak;
+            var rakiaMoney = ((0.45 * grapeTotal) / 7.5) * 9.8;
+            var grapeMoney = (0.55 * grapeTotal) * 1.5;
+            Console.WriteLine($"{rakiaMoney:f2}");
+            Console.WriteLine($"{grapeMoney:f2}");
+        }
+    }
+}

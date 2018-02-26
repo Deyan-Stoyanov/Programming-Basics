@@ -1,0 +1,107 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace ConsoleApp2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var width = 35;
+            var height = 30;
+            Console.SetWindowSize(width, height);
+            Console.BufferHeight = Console.WindowHeight;
+            Console.BufferWidth = Console.WindowWidth;
+            Console.CursorVisible = false;
+
+            var spaceShip = '^';
+            var rowOfSpaceShip = Console.WindowHeight - 1;
+            var colOfSpaceShip = 0;
+
+            var playerPoints = 0;
+
+            var spaceShipProjectile = '|';
+
+            Random random = new Random();
+            var minGeneratedRow = 0;
+            var maxGeneratedRow = Console.WindowHeight / 2;
+            var minGeneratedCol = 0;
+            var maxGeneratedCol = Console.WindowWidth;
+            var enemy = '*';
+            var rowOfEnemy = random.Next(minGeneratedRow, maxGeneratedRow);
+            var colOfEnemy = random.Next(minGeneratedCol, maxGeneratedCol);
+
+
+            Console.SetCursorPosition(colOfSpaceShip, rowOfSpaceShip);
+            Console.Write(spaceShip);
+
+            Console.SetCursorPosition(colOfEnemy, rowOfEnemy);
+            Console.Write(enemy);
+
+            while (true)
+            {
+                ConsoleKeyInfo currentPressedKey = Console.ReadKey();
+                if (currentPressedKey.Key == ConsoleKey.LeftArrow && colOfSpaceShip > 0)
+                {
+                    colOfSpaceShip--;
+                }
+                else if (currentPressedKey.Key == ConsoleKey.RightArrow && colOfSpaceShip <= Console.WindowWidth - 2)
+                {
+                    colOfSpaceShip++;
+                }
+                else if (currentPressedKey.Key == ConsoleKey.Spacebar)
+                {
+                    var rowOfProjectile = rowOfSpaceShip - 1;
+                    var colOfProjectile = colOfSpaceShip;
+                    
+                    while (rowOfProjectile > 0)
+                    {
+                        Console.Clear();
+                        Console.SetCursorPosition(colOfSpaceShip, rowOfSpaceShip);
+                        Console.Write(spaceShip);
+
+                        Console.SetCursorPosition(colOfEnemy, rowOfEnemy);
+                        Console.Write(enemy);
+
+                        Console.SetCursorPosition(colOfProjectile, rowOfProjectile);
+                        Console.Write(spaceShipProjectile);
+                        Thread.Sleep(70);
+                        if (rowOfProjectile == rowOfEnemy && colOfProjectile == colOfEnemy)
+                        {
+                            playerPoints++;
+                            rowOfEnemy = random.Next(minGeneratedRow, maxGeneratedRow);
+                            colOfEnemy = random.Next(minGeneratedCol, maxGeneratedCol);
+                            break;
+                        }
+
+
+                        rowOfProjectile--;
+                    }
+                    Console.WriteLine(playerPoints);
+                    if (rowOfProjectile == 0)
+                    {
+                        goto PrintResult;
+                    }
+                }
+                Console.Clear();
+                Console.SetCursorPosition(colOfSpaceShip, rowOfSpaceShip);
+                Console.Write(spaceShip);
+                Console.SetCursorPosition(colOfEnemy, rowOfEnemy);
+                Console.Write(enemy);
+            }
+            PrintResult:
+            Console.WriteLine("YOU LOST");
+            Console.WriteLine(playerPoints);
+
+        }
+    }
+}
+
+
+
+
+

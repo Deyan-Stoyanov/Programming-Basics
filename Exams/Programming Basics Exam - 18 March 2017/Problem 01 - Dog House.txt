@@ -1,0 +1,27 @@
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Numerics;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var length = double.Parse(Console.ReadLine());
+            var width = double.Parse(Console.ReadLine());
+            var sides = 2 * (length * (length / 2));
+            var frontBack = 2 * ((length / 2 ) * (length / 2)) + 2 * ((length / 2) * (width - (length / 2)) / 2) - ((length / 5) * (length / 5));
+            var roof = 2 * (length * (length / 2));
+            var green = (sides + frontBack) / 3;
+            var red = roof / 5;
+            Console.WriteLine($"{green:f2}");
+            Console.WriteLine($"{red:f2}");
+
+        }
+    }
+}

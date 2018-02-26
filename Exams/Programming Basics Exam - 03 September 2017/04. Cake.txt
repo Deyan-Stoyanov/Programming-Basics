@@ -1,0 +1,37 @@
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Numerics;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var cakeWidth = double.Parse(Console.ReadLine());
+            var cakeLength = double.Parse(Console.ReadLine());
+            var pieces = cakeLength * cakeWidth;
+            while (pieces >= 0)
+            {
+                var piecesTaken = Console.ReadLine();
+                if (piecesTaken == "STOP")
+                {
+                    Console.WriteLine($"{pieces} pieces are left.");
+                    break;
+
+                }
+                pieces -= Convert.ToInt32(piecesTaken);
+
+            }
+            if (pieces < 0)
+            {
+                Console.WriteLine($"No more cake left! You need {Math.Abs(pieces)} pieces more.");
+            }
+
+        }
+    }
+}

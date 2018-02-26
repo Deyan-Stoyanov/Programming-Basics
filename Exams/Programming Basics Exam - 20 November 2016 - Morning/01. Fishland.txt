@@ -1,0 +1,25 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var skumriqPrice = double.Parse(Console.ReadLine());
+            var cacaPrice = double.Parse(Console.ReadLine());
+            var palamudKg = double.Parse(Console.ReadLine());
+            var safridKg = double.Parse(Console.ReadLine());
+            var midiKg = double.Parse(Console.ReadLine());
+            var palamud = palamudKg * (skumriqPrice + 0.6 * skumriqPrice);
+            var safrid = safridKg * (cacaPrice + 0.8 * cacaPrice);
+            var midi = midiKg * 7.5;
+            Console.WriteLine($"{(palamud+safrid+midi):f2}");
+
+        }
+    }
+}

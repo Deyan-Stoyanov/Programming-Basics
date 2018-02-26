@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace ConsoleApp2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            var magnoliq = int.Parse(Console.ReadLine());
+            var zumbul = int.Parse(Console.ReadLine());
+            var rose = int.Parse(Console.ReadLine());
+            var cactus = int.Parse(Console.ReadLine());
+            var geschenkPreis = double.Parse(Console.ReadLine());
+            var magnoliqPrice = 3.25;
+            var zumbulPrice = 4;
+            var rosePrice = 3.5;
+            var cactusPrice = 8;
+            var gesamt = magnoliq * magnoliqPrice + zumbul * zumbulPrice + cactus * cactusPrice + rose * rosePrice;
+            var netto = 0.95 * gesamt;
+            if (geschenkPreis <= netto)
+            {
+                Console.WriteLine($"She is left with {Math.Floor(netto - geschenkPreis)} leva.");
+            }
+            else
+            {
+                Console.WriteLine($"She will have to borrow {Math.Ceiling(geschenkPreis - netto)} leva.");
+            }
+
+
+        }
+    }
+}

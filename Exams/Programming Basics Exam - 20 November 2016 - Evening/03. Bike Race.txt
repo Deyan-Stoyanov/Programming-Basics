@@ -1,0 +1,51 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace ConsoleApp2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            var juniorCyclists = int.Parse(Console.ReadLine());
+            var seniorCyclists = int.Parse(Console.ReadLine());
+            var juniorPrice = 0.0;
+            var seniorPrice = 0.0;
+            var typeOfRace = Console.ReadLine().ToLower();
+            switch (typeOfRace)
+            {
+                case "trail":
+                    juniorPrice = 5.50;
+                    seniorPrice = 7.0;
+                    break;
+                case "cross-country":
+                    juniorPrice = 8.0;
+                    seniorPrice = 9.50;
+                    break;
+                case "downhill":
+                    juniorPrice = 12.25;
+                    seniorPrice = 13.75;
+                    break;
+                case "road":
+                    juniorPrice = 20.0;
+                    seniorPrice = 21.50;
+                    break;
+                default:
+                    break;
+            }
+            var total = seniorPrice * seniorCyclists + juniorPrice * juniorCyclists;
+            if (typeOfRace == "cross-country" && (juniorCyclists + seniorCyclists) >= 50)
+            {
+                total = total * 0.75;
+            }
+            var netto = total * 0.95;
+            Console.WriteLine($"{netto:f2}");
+
+        }
+    }
+}

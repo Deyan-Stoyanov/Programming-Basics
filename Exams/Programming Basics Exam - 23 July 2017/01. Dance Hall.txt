@@ -1,0 +1,28 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var roomLength = double.Parse(Console.ReadLine());
+            var roomWidth = double.Parse(Console.ReadLine());
+            var wardrobeSide = double.Parse(Console.ReadLine());
+            var wardrobeArea = wardrobeSide * wardrobeSide;
+            var roomArea = roomLength * roomWidth;
+            var benchArea = roomArea / 10;
+            var totalArea = roomArea - (benchArea + wardrobeArea);
+
+            var dancerSpace = 0.7040;
+            var dancersTotal = Math.Floor(totalArea / dancerSpace);
+            Console.WriteLine(dancersTotal);
+
+        }
+    }
+
+}

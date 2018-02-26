@@ -1,0 +1,26 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace ConsoleApp2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var smallRoom = double.Parse(Console.ReadLine());
+            var kitchen = double.Parse(Console.ReadLine());
+            var pricePerSqM = double.Parse(Console.ReadLine());
+            var middleRoom = 1.1 * smallRoom;
+            var largeRoom = 1.1 * middleRoom;
+            var bathroom = 0.5 * smallRoom;
+            var allRooms = smallRoom + middleRoom + largeRoom + kitchen + bathroom;
+            var total = 1.05 * allRooms;
+            var price = total * pricePerSqM;
+            Console.WriteLine($"{price:f2}");
+        }
+    }
+}

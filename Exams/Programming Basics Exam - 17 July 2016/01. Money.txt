@@ -1,0 +1,23 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var bitcoin = int.Parse(Console.ReadLine());
+            var yuan = double.Parse(Console.ReadLine());
+            var comission = double.Parse(Console.ReadLine());
+            var leva = (bitcoin * 1168) + ((yuan * 0.15) * 1.76);
+            var euro = leva / 1.95;
+            var total = euro - (euro * (comission / 100));
+            Console.WriteLine($"{total:f2}");
+
+        }
+    }
+}

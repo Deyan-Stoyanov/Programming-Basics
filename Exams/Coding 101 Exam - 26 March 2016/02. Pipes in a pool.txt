@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var v = int.Parse(Console.ReadLine());
+            var p1 = int.Parse(Console.ReadLine());
+            var p2 = int.Parse(Console.ReadLine());
+            var h = double.Parse(Console.ReadLine());
+            double water = (h * (p1 + p2));
+            if (water <= v)
+            {
+                Console.WriteLine($"The pool is {(int)((water / v) * 100.0)}% full. Pipe 1: {(int)(((p1 * h) / water) * 100.0)}%. Pipe 2: {(int)(((p2 * h) / water) * 100.0)}%.");
+            }
+            else
+            {
+                Console.WriteLine($"For {h} hours the pool overflows with {(double)(water - v):f1} liters.");
+            }
+        }
+    }
+
+}

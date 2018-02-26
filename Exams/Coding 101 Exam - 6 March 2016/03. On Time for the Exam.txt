@@ -1,0 +1,69 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var examHour = int.Parse(Console.ReadLine());
+            var examMinute = int.Parse(Console.ReadLine());
+            var arrivalHour = int.Parse(Console.ReadLine());
+            var arrivalMinute = int.Parse(Console.ReadLine());
+
+            var examTotal = examHour * 60 + examMinute;
+            var arrivalTotal = arrivalHour * 60 + arrivalMinute;
+
+            if (arrivalTotal > examTotal)
+            {
+                Console.WriteLine("late");
+                if (arrivalTotal - examTotal < 60)
+                {
+                    Console.WriteLine($"{arrivalTotal - examTotal} minutes after the start");
+                }
+                else
+                {
+                    if ((arrivalTotal - examTotal) % 60 <= 9) 
+                    {
+                        Console.WriteLine($"{(arrivalTotal - examTotal) / 60}:0{(arrivalTotal - examTotal) % 60} hours after the start");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"{(arrivalTotal - examTotal) / 60}:{(arrivalTotal - examTotal) % 60} hours after the start");
+                    }
+                }
+            }
+            else if (arrivalTotal <= examTotal)
+            {
+                if (examTotal - arrivalTotal > 30)
+                {
+                    Console.WriteLine("early");
+                    if ((examTotal - arrivalTotal) % 60 <= 9)
+                    {
+                        Console.WriteLine($"{(examTotal - arrivalTotal) / 60}:0{(examTotal - arrivalTotal) % 60} hours before the start");
+                    }
+                    if (examTotal - arrivalTotal < 60)
+                    {
+                        Console.WriteLine($"{(examTotal - arrivalTotal)} minutes before the start");
+
+                    }
+                    else
+                    {
+                        Console.WriteLine($"{(examTotal - arrivalTotal) / 60}:{(examTotal - arrivalTotal) % 60} hours before the start");
+
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("on time");
+                    Console.WriteLine($"{(examTotal - arrivalTotal)} minutes before the start");
+                }
+            }
+
+        }        
+    }
+}

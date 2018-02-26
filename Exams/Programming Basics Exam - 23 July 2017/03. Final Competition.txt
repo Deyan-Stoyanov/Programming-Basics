@@ -1,0 +1,57 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var dancers = int.Parse(Console.ReadLine());
+            var points = double.Parse(Console.ReadLine());
+            var season = Console.ReadLine().ToLower();
+            var place = Console.ReadLine().ToLower();
+            var prize = 0.0;
+            var prizeAbroad = (points * dancers + (0.5 * (points * dancers)));
+            var prizeBulgaria = points * dancers;
+            switch (season)
+            {
+                case "summer":
+                    switch (place)
+                    {
+                        case "bulgaria":
+                            prize = prizeBulgaria - (0.05 * prizeBulgaria);
+                            break;
+                        case "abroad":
+                            prize = prizeAbroad - (0.1 * prizeAbroad);
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                case "winter":
+                    switch (place)
+                    {
+                        case "bulgaria":
+                            prize = prizeBulgaria - (0.08 * prizeBulgaria);
+                            break;
+                        case "abroad":
+                            prize = prizeAbroad - (0.15 * prizeAbroad);
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                default:
+                    break;
+            }
+            var charity = prize * 75 / 100;
+            var prizePerDancer = (prize - charity) / dancers;
+            Console.WriteLine($"Charity - {charity:f2}");
+            Console.WriteLine($"Money per dancer - {prizePerDancer:f2}");
+        }
+    }
+}

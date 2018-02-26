@@ -1,0 +1,67 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var budget = double.Parse(Console.ReadLine());
+            var category = Console.ReadLine().ToLower();
+            var people = int.Parse(Console.ReadLine());
+            var transport = 0.0;
+            
+
+            if (people <= 4)
+            {
+                transport = 0.75 * budget;
+            }
+            else if (people <= 9)
+            {
+                transport = 0.6 * budget;
+            }
+            else if (people <= 24)
+            {
+                transport = 0.5 * budget;
+            }
+            else if (people <= 49)
+            {
+                transport = 0.4 * budget;
+            }
+            else
+            {
+                transport = 0.25 * budget;
+            }
+            var netto = budget - transport;
+            switch (category)
+            {
+                case "normal":
+                    if (netto > (people * 249.99))
+                    {
+                        Console.WriteLine($"Yes! You have {(netto - (people * 249.99)):f2} leva left.");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Not enough money! You need {(Math.Abs(netto - (people * 249.99))):f2} leva.");
+                    }
+                    break;
+                case "vip":
+                    if (netto > (people * 499.99))
+                    {
+                        Console.WriteLine($"Yes! You have {(netto - (people * 499.99)):f2} leva left.");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Not enough money! You need {(Math.Abs(netto - (people * 499.99))):f2} leva.");
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }        
+    }
+}

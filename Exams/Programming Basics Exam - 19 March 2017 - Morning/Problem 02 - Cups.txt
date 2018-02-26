@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var cupsToMake = int.Parse(Console.ReadLine());
+            var workers = int.Parse(Console.ReadLine());
+            var workingHours = (int.Parse(Console.ReadLine())) * 8;
+            var cups = Math.Floor((workers * workingHours) / 5.0);
+            var moneyToEarn = cupsToMake * 4.2;
+            var moneyEarned = cups * 4.2;
+            if (moneyEarned >= moneyToEarn)
+            {
+                Console.WriteLine($"{(moneyEarned - moneyToEarn):f2} extra money");
+            }
+            else
+            {
+                Console.WriteLine($"Losses: {(moneyToEarn - moneyEarned):f2}");
+            }
+
+        }
+    }
+}

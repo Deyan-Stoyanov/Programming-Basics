@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var years = int.Parse(Console.ReadLine());
+            var washmashinePrice = double.Parse(Console.ReadLine());
+            var toyPrice = double.Parse(Console.ReadLine());
+            var toys = 0;
+            var money = 0.0;
+            var totalSaved = 0.0;
+            for (int i = 1; i <= years; i++)
+            {
+                if (i % 2 != 0)
+                {
+                    toys++;
+                }
+                else
+                {
+                    money += ((i / 2) * 10);
+                }
+            }
+            totalSaved = (toys * toyPrice) + (money - (years / 2));
+            if (totalSaved >= washmashinePrice)
+            {
+                Console.WriteLine($"Yes! {(totalSaved - washmashinePrice):f2}");
+            }
+            else
+            {
+                Console.WriteLine($"No! {(washmashinePrice - totalSaved):f2}");
+            }
+        }
+    }
+}

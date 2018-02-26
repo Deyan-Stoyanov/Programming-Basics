@@ -1,0 +1,26 @@
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Numerics;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var speed = int.Parse(Console.ReadLine());
+            var time1 = int.Parse(Console.ReadLine());
+            var time2 = int.Parse(Console.ReadLine());
+            var time3 = int.Parse(Console.ReadLine());
+            var distance1 = (time1 / 60.0) * speed;
+            var distance2 = (time2 / 60.0) * (1.1 * speed);
+            var distance3 = (time3 / 60.0) * (1.1 * speed - (0.05 * (1.1 * speed)));
+            var total = distance1 + distance2 + distance3;
+            Console.WriteLine($"{total:f2}");
+        }
+    }
+}

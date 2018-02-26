@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var platzLange = int.Parse(Console.ReadLine());
+            var tileWidth = double.Parse(Console.ReadLine());
+            var tileLength = double.Parse(Console.ReadLine());
+            var benchWidth = int.Parse(Console.ReadLine());
+            var benchLength = int.Parse(Console.ReadLine());
+
+            var platzArea = platzLange * platzLange;
+            var tileArea = tileWidth * tileLength;
+            var benchArea = benchLength * benchWidth;
+            var areaToRepair = platzArea - benchArea;
+            var tiles = (areaToRepair / tileArea);
+            var time = tiles * 0.2;
+            Console.WriteLine($"{tiles:f2}");
+            Console.WriteLine($"{time:f2}");
+        }
+    }
+
+}

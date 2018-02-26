@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace ConsoleApp2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            var beginning = int.Parse(Console.ReadLine());
+            var end = int.Parse(Console.ReadLine());
+            var maxNum = int.Parse(Console.ReadLine());
+            var count = 0;
+            for (int i = beginning; i <= end; i++)
+            {
+                for (int j = beginning; j <= end; j++)
+                {
+                    ++count;
+                    if (count > maxNum)
+                    {
+                        break;
+                    }
+                    Console.Write($"<{i}-{j}>");
+
+                    
+                }
+                if (count > maxNum)
+                {
+                    break;
+                }
+            }
+
+        }
+    }
+}

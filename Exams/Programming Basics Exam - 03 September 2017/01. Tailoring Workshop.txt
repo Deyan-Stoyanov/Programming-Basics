@@ -1,0 +1,28 @@
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Numerics;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var nTables = int.Parse(Console.ReadLine());
+            var lengthTable = double.Parse(Console.ReadLine());
+            var widthTable = double.Parse(Console.ReadLine());
+            var rectangleTablesArea = ((lengthTable + 0.6) * (widthTable + 0.6)) * nTables;
+            var squareArea = ((lengthTable / 2) * (lengthTable / 2)) * nTables;
+            var rectanglePrice = rectangleTablesArea * 7.0;
+            var squarePrice = squareArea * 9.0;
+            var totalDollar = rectanglePrice + squarePrice;
+            var totalLeva = totalDollar * 1.85;
+            Console.WriteLine($"{totalDollar:f2} USD");
+            Console.WriteLine($"{totalLeva:f2} BGN");
+        }
+    }
+}

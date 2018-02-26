@@ -1,0 +1,24 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            var room_l = double.Parse(Console.ReadLine());
+            var room_w = double.Parse(Console.ReadLine());
+            int lines = (int)(room_l * 100 / 120);
+            int columns = (int)(((room_w * 100) - 100) / 70);
+            int placeNumber = (lines * columns) - 3;
+            Console.WriteLine(placeNumber);
+
+        }
+    }
+
+}

@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var months = int.Parse(Console.ReadLine());
+            var electricityTotal = 0.0;
+            var water = 0.0;
+            var internet = 0.0;
+            var others = 0.0;
+            var othersTotal = 0.0;
+            for (int i = 0; i < months; i++)
+            {
+                var electricity = double.Parse(Console.ReadLine());
+                water += 20;
+                internet += 15;
+                electricityTotal += electricity;
+                others = (electricity + 20 + 15) + 0.2 * (electricity + 20 + 15);
+                othersTotal += others;
+                
+            }
+            var total = electricityTotal + water + internet + othersTotal;
+            var average = total / months;
+            Console.WriteLine($"Electricity: {electricityTotal:f2} lv");
+            Console.WriteLine($"Water: {water:f2} lv");
+            Console.WriteLine($"Internet: {internet:f2} lv");
+            Console.WriteLine($"Other: {othersTotal:f2} lv");
+            Console.WriteLine($"Average: {average:f2} lv");
+
+
+        }
+    }
+}

@@ -1,0 +1,69 @@
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Numerics;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var nPhotos = int.Parse(Console.ReadLine());
+            var sizeOfPhoto = Console.ReadLine();
+            var place = Console.ReadLine().ToLower();
+            var total = 0.0;
+            switch (sizeOfPhoto)
+            {
+                case "9X13":
+                    total = nPhotos * 0.16;
+                    if (nPhotos >= 50)
+                    {
+                        total *= 0.95;
+                    }
+                    break;
+                case "10X15":
+                    total = nPhotos * 0.16;
+                        if (nPhotos  >= 80)
+                        {
+                            total *= 0.97;
+                        }
+                    break;
+                case "13X18":
+                    total = nPhotos * 0.38;
+                    if (nPhotos >= 50 && nPhotos <= 100)
+                    {
+                        total *= 0.97;
+                    }
+                    else if (nPhotos > 100)
+                    {
+                        total *= 0.95;
+                    }
+                    break;
+                case "20X30":
+                    total = nPhotos * 2.90;
+                    if (nPhotos >= 10 && nPhotos <= 50)
+                    {
+                        total *= 0.93;
+                    }
+                    else if (nPhotos > 50)
+                    {
+                        total *= 0.91;
+                    }
+                    break;
+                default:
+                    break;
+            }
+            if (place == "online")
+            {
+                total *= 0.98;
+            }
+            Console.WriteLine($"{total:f2}BGN");
+
+
+        }
+    }
+}

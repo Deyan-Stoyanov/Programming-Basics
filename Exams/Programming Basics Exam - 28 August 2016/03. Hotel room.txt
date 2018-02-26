@@ -1,0 +1,70 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Program1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var month = Console.ReadLine().ToLower();
+            var nights = int.Parse(Console.ReadLine());
+            var studioPrice = 0.0;
+            var AppartmentPrice = 0.0;
+            switch (month)
+            {
+                case "may":
+                case "october":
+                    if (nights > 14)
+                    {
+                        studioPrice = (50 * nights) * 0.7;
+                        AppartmentPrice = 0.9 * (65 * nights);
+                    }
+                    else if (nights > 7)
+                    {
+                        studioPrice = (50 * nights) * 0.95;
+                        AppartmentPrice = 65 * nights;
+                    }
+                    else
+                    {
+                        studioPrice = (50 * nights);
+                        AppartmentPrice = 65 * nights;
+                    }
+                    break;
+                case "june":
+                case "september":
+                    if (nights > 14)
+                    {
+                        studioPrice = (75.20 * nights) * 0.8;
+                        AppartmentPrice = 0.9 * (68.70 * nights);
+                    }
+                    else
+                    {
+                        studioPrice = (75.20 * nights);
+                        AppartmentPrice =(68.70 * nights);
+                    }
+                    break;
+                case "july":
+                case "august":
+                    if (nights > 14)
+                    {
+                        studioPrice = (76 * nights);
+                        AppartmentPrice = 0.9 * (77 * nights);
+                    }
+                    else
+                    {
+                        studioPrice = (76 * nights);
+                        AppartmentPrice = (77 * nights);
+                    }
+                    break;
+                default:
+                    break;
+            }
+            Console.WriteLine($"Apartment: {AppartmentPrice:f2} lv.");
+            Console.WriteLine($"Studio: {studioPrice:f2} lv.");
+        }
+    }
+}

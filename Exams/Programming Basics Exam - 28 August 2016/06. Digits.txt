@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Program1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var n = int.Parse(Console.ReadLine());
+            var firstNum = n / 100;
+            var secondNum = (n % 100) / 10;
+            var lastNum = n % 10;
+            for (int rows = 0; rows < (firstNum + secondNum); rows++)
+            {
+                for (int cols = 0; cols < (firstNum + lastNum); cols++)
+                {
+                    
+                    if (n % 5 == 0)
+                    {
+                        n -= firstNum;
+                    }
+                    else if (n % 3 == 0)
+                    {
+                        n -= secondNum;
+                    }
+                    else
+                    {
+                        n += lastNum;
+                    }
+                    Console.Write($"{n} ");
+                }
+                Console.WriteLine();
+            }
+        }
+    }
+}

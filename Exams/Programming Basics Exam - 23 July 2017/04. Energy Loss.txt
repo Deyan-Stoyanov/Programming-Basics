@@ -1,0 +1,53 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var days = int.Parse(Console.ReadLine());
+            var dancers = int.Parse(Console.ReadLine());
+            var energyWasted = 0.0;
+            var sum = 0.0;
+            var energyTotal = dancers * days * 100;
+            for (int i = 1; i <= days; i++)
+            {
+                var hours = int.Parse(Console.ReadLine());
+                if (i % 2 == 0 && hours % 2 == 0)
+                {
+                    energyWasted = 68 * dancers;
+                }
+                else if (i % 2 == 0 && hours % 2 != 0)
+                {
+                    energyWasted = 65 * dancers;
+                }
+                else if (i % 2 != 0 && hours % 2 == 0)
+                {
+                    energyWasted = 49 * dancers;
+                }
+                else if (i % 2 != 0 && hours % 2 != 0)
+                {
+                    energyWasted = 30 * dancers;
+                }
+                sum += energyWasted;
+
+            }
+            var energySaved = energyTotal - sum;
+            var savedPerPerson = energySaved / days / dancers;
+            if (savedPerPerson >= 50)
+            {
+                Console.WriteLine($"They feel good! Energy left: {(savedPerPerson):f2}");
+            }
+            else
+            {
+                Console.WriteLine($"They are wasted! Energy left: {(savedPerPerson):f2}");
+
+            }
+        }
+    }
+}

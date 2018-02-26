@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var budget = double.Parse(Console.ReadLine());
+            var area = double.Parse(Console.ReadLine());
+            var windows = double.Parse(Console.ReadLine());
+            var styrofoamPerPack = double.Parse(Console.ReadLine());
+            var pricePerPack = double.Parse(Console.ReadLine());
+            var areaTotal = (area - (windows * 2.4)) + 0.1 * (area - (windows * 2.4));
+            var packs = Math.Ceiling(areaTotal / styrofoamPerPack);
+            var price = packs * pricePerPack;
+            if (price > budget)
+            {
+                Console.WriteLine($"Need more: {(price - budget):f2}");
+            }
+            else
+            {
+                Console.WriteLine($"Spent: {price:f2}");
+                Console.WriteLine($"Left: {(budget - price):f2}");
+            }
+
+
+
+        }
+    }
+}

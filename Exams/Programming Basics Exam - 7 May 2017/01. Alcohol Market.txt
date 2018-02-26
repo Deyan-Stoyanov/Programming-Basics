@@ -1,0 +1,25 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var whiskeyPrice = double.Parse(Console.ReadLine());
+            var rakiaPrice = whiskeyPrice / 2;
+            var winePrice = rakiaPrice - (0.4 * rakiaPrice);
+            var beerPrice = rakiaPrice - (0.8 * rakiaPrice);
+            var beerQuantity = double.Parse(Console.ReadLine());
+            var wineQuantity = double.Parse(Console.ReadLine());
+            var rakiaQuantity = double.Parse(Console.ReadLine());
+            var whiskeyQuantity = double.Parse(Console.ReadLine());
+            var total = whiskeyPrice * whiskeyQuantity + rakiaPrice * rakiaQuantity + winePrice * wineQuantity + beerPrice * beerQuantity;
+            Console.WriteLine($"{total:f2}");
+        }
+    }
+}

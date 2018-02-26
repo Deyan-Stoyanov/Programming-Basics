@@ -1,0 +1,31 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var days = int.Parse(Console.ReadLine());
+            var bakers = int.Parse(Console.ReadLine());
+            var cakesPerDay = int.Parse(Console.ReadLine());
+            var wafflesPerDay = int.Parse(Console.ReadLine());
+            var blinsPerDay = int.Parse(Console.ReadLine());
+
+            var cake = 45.0;
+            var waffle = 5.8;
+            var blin = 3.2;
+
+            var totalPerBaker = cakesPerDay * cake + wafflesPerDay * waffle + blinsPerDay * blin;
+            var totalPerDay = totalPerBaker * bakers;
+            var total = totalPerDay * days;
+            var totalForCharity = total - (total * 1 / 8);
+            Console.WriteLine($"{totalForCharity:f2}");
+
+        }
+    }
+}

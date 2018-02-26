@@ -1,0 +1,42 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var jigsawPrice = 2.60;
+            var dollPrice = 3.0;
+            var teddyBearPrice = 4.10;
+            var minionPrice = 8.20;
+            var truckPrice = 2.00;
+
+            var tripPrice = double.Parse(Console.ReadLine());
+            var jigsawQuantity = int.Parse(Console.ReadLine());
+            var dollQuantity = int.Parse(Console.ReadLine());
+            var teddyBearQuantity = int.Parse(Console.ReadLine());
+            var minionQuantity = int.Parse(Console.ReadLine());
+            var truckQuantity = int.Parse(Console.ReadLine());
+            var totalNumberOfToys = jigsawQuantity + dollQuantity + teddyBearQuantity + truckQuantity + minionQuantity;
+            var total = jigsawPrice * jigsawQuantity + dollPrice * dollQuantity + teddyBearPrice * teddyBearQuantity + minionPrice * minionQuantity + truckPrice * truckQuantity;
+            if (totalNumberOfToys >= 50 )
+            {
+                total = total - (total * 0.25);
+            }
+            var totalNetto = total - (total * 0.1);
+            if (tripPrice <= totalNetto)
+            {
+                Console.WriteLine($"Yes! {(totalNetto - tripPrice):f2} lv left.");
+            }
+            else
+            {
+                Console.WriteLine($"Not enough money! {(tripPrice - totalNetto):f2} lv needed.");
+            }
+        }
+    }
+}

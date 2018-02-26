@@ -1,0 +1,75 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var budget = double.Parse(Console.ReadLine());
+            var season = Console.ReadLine().ToLower();
+            var money = 0.0;
+            var place = "";
+            var accomodation = "";
+            if (budget > 3000)
+            {
+
+                accomodation = "Hotel";
+                money = budget * 0.9;
+                switch (season)
+                {
+                    case "winter":
+                        place = "Morocco";
+                        break;
+                    case "summer":
+                        place = "Alaska";
+                        break;
+                    default:
+                        break;
+                }
+            }
+            else if (budget > 1000)
+            {
+                accomodation = "Hut";
+                
+                switch (season)
+                {
+                    case "winter":
+                        money = budget * 0.6;
+                        place = "Morocco";
+                        break;
+                    case "summer":
+                        money = budget * 0.8;
+                        place = "Alaska";
+                        break;
+                    default:
+                        break;
+                }
+            }
+            else
+            {
+                accomodation = "Camp";
+
+                switch (season)
+                {
+                    case "winter":
+                        money = budget * 0.45;
+                        place = "Morocco";
+                        break;
+                    case "summer":
+                        money = budget * 0.65;
+                        place = "Alaska";
+                        break;
+                    default:
+                        break;
+                }
+            }
+            Console.WriteLine($"{place} - {accomodation} - {money:f2}");
+
+        }
+    }
+}

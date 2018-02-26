@@ -1,0 +1,26 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var x = double.Parse(Console.ReadLine());
+            var y = double.Parse(Console.ReadLine());
+            var h = double.Parse(Console.ReadLine());
+            var frontArea = ((x * x) * 2) - (1.2 * 2);
+            var sideArea = 2 * (x * y - (1.5 * 1.5));
+            var roofFront = 2 * ((x * h) / 2);
+            var roofSide = 2 * (x * y);
+            var greenPaint = (frontArea + sideArea) / 3.4;
+            var redPaint = (roofFront + roofSide) / 4.3;
+            Console.WriteLine($"{greenPaint:f2}");
+            Console.WriteLine($"{redPaint:f2}");
+        }
+    }
+}

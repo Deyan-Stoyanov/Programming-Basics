@@ -1,0 +1,50 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace ConsoleApp2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            var loadsNumber = int.Parse(Console.ReadLine());
+            var bus = 0;
+            var truck = 0;
+            var train = 0;
+            var sum = 0;
+            for (int i = 0; i < loadsNumber; i++)
+            {
+                var load = int.Parse(Console.ReadLine());
+                if (load >= 12)
+                {
+                    sum += load;
+                    train += load;
+                }
+                else if (load >= 4)
+                {
+                    sum += load ;
+                    truck += load;
+                }
+                else
+                {
+                    sum += load ;
+                    bus += load;
+                }
+            }
+            var price = (bus * 200.0 + truck * 175.0 + train * 120.0) / sum;
+            var p1 = bus * 100.0 / sum;
+            var p2 = truck * 100.0 / sum;
+            var p3 = train * 100.0 / sum;
+            Console.WriteLine($"{price:f2}");
+            Console.WriteLine($"{p1:f2}%");
+            Console.WriteLine($"{p2:f2}%");
+            Console.WriteLine($"{p3:f2}%");
+
+        }
+    }
+}

@@ -1,0 +1,48 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var stadiumCapacity = int.Parse(Console.ReadLine());
+            var fansNumber = int.Parse(Console.ReadLine());
+            var sectorAFans = 0;
+            var sectorBFans = 0;
+            var sectorVFans = 0;
+            var sectorGFans = 0;
+            for (int fan = 0; fan < fansNumber; fan++)
+            {
+                var sector = char.Parse(Console.ReadLine());
+                switch (sector)
+                {
+                    case 'A':
+                        sectorAFans++;
+                        break;
+                    case 'B':
+                        sectorBFans++;
+                        break;
+                    case 'V':
+                        sectorVFans++;
+                        break;
+                    case 'G':
+                        sectorGFans++;
+                        break;
+                    default:
+                        break;
+                }
+            }
+            Console.WriteLine($"{(sectorAFans * 100.0/ fansNumber):f2}%");
+            Console.WriteLine($"{(sectorBFans * 100.0 / fansNumber):f2}%");
+            Console.WriteLine($"{(sectorVFans * 100.0 / fansNumber):f2}%");
+            Console.WriteLine($"{(sectorGFans * 100.0 / fansNumber):f2}%");
+            Console.WriteLine($"{(fansNumber * 100.0 / stadiumCapacity):f2}%");
+
+        }
+    }
+}

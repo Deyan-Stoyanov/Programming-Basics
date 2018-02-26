@@ -1,0 +1,37 @@
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Numerics;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var money = double.Parse(Console.ReadLine());
+            var floorWidth = double.Parse(Console.ReadLine());
+            var floorLength = double.Parse(Console.ReadLine());
+            var tileSide = double.Parse(Console.ReadLine());
+            var tileH = double.Parse(Console.ReadLine());
+            var pricePerTile = double.Parse(Console.ReadLine());
+            var maistor = double.Parse(Console.ReadLine());
+            var area = floorLength * floorWidth;
+            var tileArea = (tileH * tileSide) / 2;
+            var tilesN = Math.Ceiling(area / tileArea) + 5;
+            var price = pricePerTile * tilesN + maistor;
+            if (money >= price)
+            {
+                Console.WriteLine($"{(money - price):f2} lv left.");
+            }
+            else
+            {
+                Console.WriteLine($"You'll need {(price - money):f2} lv more.");
+
+            }
+        }
+    }
+}

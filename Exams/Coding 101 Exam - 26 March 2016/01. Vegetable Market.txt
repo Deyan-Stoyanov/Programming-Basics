@@ -1,0 +1,22 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var vegPrice = double.Parse(Console.ReadLine());
+            var fruitPrice = double.Parse(Console.ReadLine());
+            var vegTotal = int.Parse(Console.ReadLine());
+            var fruitTotal = int.Parse(Console.ReadLine());
+            var total = (fruitPrice * fruitTotal) + (vegPrice * vegTotal);
+            Console.WriteLine($"{(total / 1.94):f2}");
+        }
+    }
+
+}
